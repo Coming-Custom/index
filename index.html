@@ -140,10 +140,6 @@
 <script type="text/javascript">
 var baidu_ak="3IQcYLP7fbdSwhX1CHFD3EFe9GKodAHE";
 function loadJScript() {
-	var script = document.createElement("script");
-	script.type = "text/javascript";
-	script.src = "//api.map.baidu.com/api?v=2.0&ak="+baidu_ak+"&callback=init";
-	document.body.appendChild(script);
 	var date = new Date();
 	var year = date.getFullYear();
 	var month = date.getMonth() + 1;
@@ -151,6 +147,10 @@ function loadJScript() {
 	var dateStr = year + '-' + month + '-' + day;
 	document.getElementById("startDate").innerHTML = dateStr;
 	document.getElementById("endDate").innerHTML = dateStr;
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	script.src = "//api.map.baidu.com/api?v=2.0&ak="+baidu_ak+"&callback=init";
+	document.body.appendChild(script);
 }
 window.onload = loadJScript;
 </script>
